@@ -1,0 +1,45 @@
+{{#if isNew}}
+   <h1>Add new Library </h1>
+{{else}}
+   <h2>Edit Library</h2>
+{{/if}}
+
+<div class="form-horizontal">
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Name</label>
+    <div class="col-sm-6">
+
+      {{input type="text" value=library.name class="form-control" placeholder="The name of the Library"}}
+    
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Address</label>
+    <div class="col-sm-6">
+
+      {{input type="text" value=library.address class="form-control" placeholder="The address of the Library"}}
+    
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-2 control-label">Phone</label>
+    <div class="col-sm-6">
+     
+      {{input type="text" value=library.phone class="form-control" placeholder="The phone number of the Library"}}
+    
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-6">
+     {{#if isNew}}
+        <button type="submit" class="btn btn-default" {{action 'saveNewLibrary' library}}>Add to library list
+        </button>
+     {{else}}
+        <button type="submit" class="btn btn-default" {{action 'saveExistingLibrary' library}}> Save changes 
+        </button>
+      {{/if}}
+
+    </div>
+  </div>
+</div>
+
